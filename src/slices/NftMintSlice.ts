@@ -34,7 +34,13 @@ export const loadNftMintDetails = createAsyncThunk(
     const balanceOf = await MaNftStakingContract.balanceOf(address);
     const rewardRate = await MaNftStakingContract.rewardRate();
     const totalSupplyForStaking = await MaNftStakingContract.totalSupply();
-    const apr = rewardRate.div(totalSupplyForStaking)
+    let apr
+    if(totalSupplyForStaking != 0) {
+      apr = rewardRate.div(totalSupplyForStaking)
+    }
+    else {
+      apr = 0
+    }
     const bnbPrice = reserve[1] / reserve[0];
     let stakedTokens = []
     for (let index = 0; index < parseInt(balanceOf); index++) {

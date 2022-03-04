@@ -91,7 +91,7 @@ function NftCard({ id, staked }) {
           component="img"
           height="160"
           width="200"
-          image={"https://gateway.pinata.cloud/" + imageUrl.replace("://", "/")}
+          image={imageUrl}
           alt={imageName}
         />
         <CardContent>

@@ -88,8 +88,11 @@ function NftMint() {
     if (!maxPerTx) {
       return dispatch(error("Network Error"));
     }
-    if (value > maxPerTx) {
+    if (value > maxPerTx ) {
       return dispatch(error("You can't buy maximum amount per transaction."));
+    }
+    if(value > 10 - parseInt(nftBalance)){
+      return dispatch(error("You can own up to 10."))
     }
     const amount = value;
     value = value * price;
