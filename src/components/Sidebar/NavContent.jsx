@@ -8,6 +8,7 @@ import { ReactComponent as DashboardIcon } from "../../assets/icons/dashboard.sv
 import { ReactComponent as MadaoIcon } from "../../assets/icons/madao-nav-header.svg";
 import { ReactComponent as GlobeIcon } from "../../assets/icons/globe.svg";
 import { ReactComponent as NftIcon } from "../../assets/icons/nft.svg";
+import { ReactComponent as NftStakingIcon } from "../../assets/icons/nftstaking.svg";
 
 import { trim, shorten } from "../../helpers";
 import { useAddress, useWeb3Context } from "src/hooks/web3Context";
@@ -179,7 +180,7 @@ function NavContent() {
                 className={`button-dapp-menu ${isActive ? "active" : ""}`}
               >
                 <Typography variant="h6">
-                  <SvgIcon color="primary" component={NftIcon} />
+                  <SvgIcon color="primary" component={NftStakingIcon} />
                   NFT Staking
                 </Typography>
               </Link>
